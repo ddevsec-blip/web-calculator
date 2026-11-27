@@ -57,3 +57,11 @@ jobs:
       # Step 9: Display generated artifacts
       - name: List Build Artifacts
         run: ls -lh target/
+
+      # Step 10: Upload Maven Build Artifact
+      - name: Upload Build Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: maven-build-artifact
+          path: target/*.jar
+          retention-days: 7
